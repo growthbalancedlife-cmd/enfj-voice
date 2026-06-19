@@ -12,25 +12,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* Modern Reset & Base Styles */
         :root {
-            --bg-primary: #FAF8F5; /* Warm elegant cream */
+            --bg-primary: #FAF8F5;
             --bg-secondary: #FFFDFB;
-            --bg-dark: #1E1A17; /* Deep charcoal warm tint */
+            --bg-dark: #1E1A17;
             --text-main: #2C2520;
             --text-muted: #61554D;
-            --accent: #C85A32; /* Rich warm terracotta */
+            --accent: #C85A32;
             --accent-hover: #AF4A25;
             --accent-light: #F3ECE6;
             --border: #E8E0D7;
             --max-width: 800px;
+            --gold: #C4973A;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -47,7 +43,6 @@
             padding: 0 24px;
         }
 
-        /* Typography */
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
@@ -55,29 +50,18 @@
             color: var(--text-main);
         }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
-        }
+        h1 { font-size: 3rem; margin-bottom: 24px; letter-spacing: -0.02em; }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.25rem; }
             h2 { font-size: 1.8rem; }
         }
 
-        h2 {
-            font-size: 2.2rem;
-            margin-bottom: 28px;
-            letter-spacing: -0.01em;
-        }
+        h2 { font-size: 2.2rem; margin-bottom: 28px; letter-spacing: -0.01em; }
 
-        p {
-            margin-bottom: 20px;
-            color: var(--text-muted);
-        }
+        p { margin-bottom: 20px; color: var(--text-muted); }
 
-        /* Buttons & CTA */
+        /* Buttons */
         .btn {
             display: inline-block;
             background-color: var(--accent);
@@ -100,7 +84,30 @@
             box-shadow: 0 6px 20px rgba(200, 90, 50, 0.3);
         }
 
-        /* Navigation Header */
+        .btn-gold {
+            background-color: var(--gold);
+            box-shadow: 0 4px 14px rgba(196, 151, 58, 0.3);
+        }
+
+        .btn-gold:hover {
+            background-color: #a97d2e;
+            box-shadow: 0 6px 20px rgba(196, 151, 58, 0.45);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            box-shadow: none;
+            padding: 13px 30px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: #fff;
+        }
+
+        /* Header */
         header {
             padding: 24px 0;
             border-bottom: 1px solid var(--border);
@@ -124,11 +131,9 @@
             color: var(--text-main);
         }
 
-        .logo span {
-            color: var(--accent);
-        }
+        .logo span { color: var(--accent); }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             padding: 80px 0 60px 0;
             text-align: center;
@@ -143,7 +148,20 @@
             line-height: 1.5;
         }
 
-        /* Problem Section */
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+
+        /* Problem */
         .problem {
             padding: 80px 0;
             background-color: var(--bg-secondary);
@@ -151,10 +169,7 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .problem-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
+        .problem-content { max-width: 700px; margin: 0 auto; }
 
         .problem p.lead {
             font-size: 1.25rem;
@@ -163,7 +178,7 @@
             margin-bottom: 24px;
         }
 
-        /* Solution Section */
+        /* Solution */
         .solution {
             padding: 80px 0;
             text-align: center;
@@ -188,7 +203,7 @@
             margin-top: 24px;
         }
 
-        /* Features Section */
+        /* Features */
         .features {
             padding: 80px 0;
             background-color: var(--bg-secondary);
@@ -217,21 +232,205 @@
             gap: 12px;
         }
 
-        .feature-card p {
+        .feature-card p { margin-bottom: 0; font-size: 1.05rem; }
+
+        /* ── PRODUCT SUITE SECTION ── */
+        .suite {
+            padding: 100px 0;
+            background-color: var(--bg-primary);
+            border-top: 1px solid var(--border);
+        }
+
+        .suite-intro {
+            text-align: center;
+            max-width: 660px;
+            margin: 0 auto 64px auto;
+        }
+
+        .suite-intro p { font-size: 1.15rem; }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 28px;
+            margin-bottom: 56px;
+        }
+
+        .product-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+            transform: translateY(-2px);
+        }
+
+        .product-card .product-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+        }
+
+        .product-card h3 {
+            font-size: 1.25rem;
+            line-height: 1.3;
             margin-bottom: 0;
+        }
+
+        .product-card .product-desc {
+            font-size: 0.97rem;
+            color: var(--text-muted);
+            flex-grow: 1;
+            margin-bottom: 0;
+        }
+
+        .product-card .product-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1;
+        }
+
+        .product-card .product-price span {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-left: 4px;
+        }
+
+        .product-card .btn {
+            font-size: 0.97rem;
+            padding: 13px 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ── BUNDLE BLOCK ── */
+        .bundle-block {
+            background: linear-gradient(135deg, #1E1A17 0%, #2E261F 100%);
+            border-radius: 16px;
+            padding: 52px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bundle-block::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(196,151,58,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .bundle-badge {
+            display: inline-block;
+            background-color: var(--gold);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 5px 16px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+        }
+
+        .bundle-block h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+        }
+
+        .bundle-block p {
+            color: #CBC3BC;
+            max-width: 520px;
+            margin: 0 auto 28px auto;
             font-size: 1.05rem;
         }
 
-        /* FAQ Section */
+        .bundle-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .bundle-price-was {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #6B5F58;
+            text-decoration: line-through;
+        }
+
+        .bundle-price-now {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .bundle-save-tag {
+            background-color: rgba(196,151,58,0.15);
+            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(196,151,58,0.3);
+        }
+
+        .bundle-includes {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px 20px;
+            margin-bottom: 32px;
+        }
+
+        .bundle-includes li {
+            color: #AFA49C;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .bundle-includes li::before {
+            content: '✓';
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* FAQ */
         .faq {
             padding: 80px 0;
-            background-color: var(--bg-primary);
+            background-color: var(--bg-secondary);
             border-top: 1px solid var(--border);
         }
 
         .faq-item {
             margin-bottom: 32px;
-            background-color: var(--bg-secondary);
+            background-color: var(--bg-primary);
             padding: 28px;
             border-radius: 8px;
             border: 1px solid var(--border);
@@ -245,12 +444,9 @@
             font-weight: 600;
         }
 
-        .faq-item p {
-            margin-bottom: 0;
-            font-size: 1.05rem;
-        }
+        .faq-item p { margin-bottom: 0; font-size: 1.05rem; }
 
-        /* Closing CTA Section */
+        /* Closing CTA */
         .closing-cta {
             padding: 100px 0;
             background-color: var(--bg-dark);
@@ -258,10 +454,7 @@
             text-align: center;
         }
 
-        .closing-cta h2 {
-            color: #FFFFFF;
-            margin-bottom: 24px;
-        }
+        .closing-cta h2 { color: #FFFFFF; margin-bottom: 24px; }
 
         .closing-cta p {
             color: #CBC3BC;
@@ -277,7 +470,7 @@
             letter-spacing: 0.05em;
         }
 
-        /* Footer SEO Layer */
+        /* Footer */
         footer {
             background-color: #161311;
             padding: 40px 0;
@@ -306,9 +499,10 @@
 
     <section class="hero">
         <div class="container">
+            <div class="hero-badge">3-Part ENFJ Toolkit — Now Available</div>
             <h1>AI Copywriting Prompts That Actually Sound Human</h1>
-            <p class="subheadline">The ENFJ Voice Master Prompt System — warm authority copy for coaches, therapists, and creative entrepreneurs. Works with ChatGPT, Claude, or any AI tool.</p>
-            <a href="https://learnerguide.gumroad.com/l/enfj-prompt-pack?_gl=1*l856ie*_ga*Mzg4NjE2MjI0LjE3NzkyODc2MzY.*_ga_6LJN6D94N6*czE3NzkzMTg0NjYkbzMkZzEkdDE3NzkzMTk3MzUkajUxJGwwJGgw" class="btn">Get Instant Access — $37 →</a>
+            <p class="subheadline">The complete ENFJ Voice System — warm authority copy for coaches, therapists, and creative entrepreneurs. Works with ChatGPT, Claude, or any AI tool.</p>
+            <a href="https://learnerguide.gumroad.com/l/enfj-prompt-pack" class="btn">Get the Full Prompt Pack — $37 →</a>
         </div>
     </section>
 
@@ -361,6 +555,72 @@
         </div>
     </section>
 
+    <!-- ── PRODUCT SUITE SECTION ── -->
+    <section class="suite">
+        <div class="container">
+            <div class="suite-intro">
+                <h2 style="text-align:center;">Choose Your ENFJ Toolkit</h2>
+                <p>Three products. One voice system. Pick the level that matches where you are right now — or grab the full bundle and get everything at once.</p>
+            </div>
+
+            <div class="product-grid">
+
+                <!-- Product 1: Assistant -->
+                <div class="product-card">
+                    <div class="product-label">Entry Level</div>
+                    <h3>ENFJ Assistant</h3>
+                    <p class="product-desc">50 ready-to-run ENFJ-voice prompts covering the core use cases: copy, content, onboarding, and brand messaging.</p>
+                    <div class="product-price">$37<span>one-time</span></div>
+                    <a href="https://learnerguide.gumroad.com/l/enfj-assistant" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get ENFJ Assistant →</a>
+                </div>
+
+                <!-- Product 2: Prompt Pack (anchor) -->
+                <div class="product-card" style="border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 8px 28px rgba(200,90,50,0.08);">
+                    <div class="product-label" style="color: var(--accent);">⭐ Most Popular</div>
+                    <h3>ENFJ Voice Prompt Pack</h3>
+                    <p class="product-desc">The flagship system — 5-pillar voice architecture, 10 execution templates, full language bank, and Notion workspace.</p>
+                    <div class="product-price">$37<span>one-time</span></div>
+                    <a href="https://learnerguide.gumroad.com/l/enfj-prompt-pack" class="btn" target="_blank" rel="noopener noreferrer">Get Prompt Pack →</a>
+                </div>
+
+                <!-- Product 3: Companion -->
+                <div class="product-card">
+                    <div class="product-label">Companion Guide</div>
+                    <h3>ENFJ Companion</h3>
+                    <p class="product-desc">50 prompts plus an in-depth companion guide — deeper context, expanded use cases, and a structured workflow for daily practice.</p>
+                    <div class="product-price">$27<span>one-time</span></div>
+                    <a href="https://learnerguide.gumroad.com/l/enfj-companion" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get ENFJ Companion →</a>
+                </div>
+
+            </div>
+
+            <!-- Bundle Block -->
+            <div class="bundle-block">
+                <div class="bundle-badge">Best Value</div>
+                <h3>The Complete ENFJ Suite</h3>
+                <p>All three products. One price. Everything you need to run ENFJ-voice copy across every platform, channel, and use case — forever.</p>
+
+                <div class="bundle-price-row">
+                    <div class="bundle-price-was">$101</div>
+                    <div class="bundle-price-now">$57</div>
+                    <div class="bundle-save-tag">Save $44</div>
+                </div>
+
+                <ul class="bundle-includes">
+                    <li>ENFJ Assistant (50 prompts)</li>
+                    <li>ENFJ Voice Prompt Pack (flagship)</li>
+                    <li>ENFJ Companion Guide</li>
+                    <li>Notion Workspace</li>
+                    <li>Instant Download</li>
+                </ul>
+
+                <a href="https://learnerguide.gumroad.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Get the Full Suite — $57 →</a>
+                <p style="margin-top:16px; font-size:0.85rem; color:#6B5F58; margin-bottom:0;">One-time purchase. Immediate digital delivery. No subscription.</p>
+            </div>
+
+        </div>
+    </section>
+
     <section class="faq">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 48px;">Frequently Asked Questions</h2>
@@ -371,13 +631,18 @@
             </div>
 
             <div class="faq-item">
+                <h3>Q: What's the difference between the three products?</h3>
+                <p>A: The ENFJ Assistant is your entry-level 50-prompt set — fast, practical, and ready to use immediately. The ENFJ Voice Prompt Pack is the flagship: it adds the full 5-pillar architecture, 10 execution templates, the language bank, and a Notion workspace. The ENFJ Companion pairs 50 prompts with a deeper companion guide that walks you through the "why" behind each prompt and how to build a daily practice. The bundle gives you everything at once.</p>
+            </div>
+
+            <div class="faq-item">
                 <h3>Q: Is this for beginners or experienced copywriters?</h3>
                 <p>A: Both. If you're new to AI copywriting, the templates give you a complete starting point. If you already write copy, the voice architecture elevates your prompts from generic to brand-specific.</p>
             </div>
 
             <div class="faq-item">
                 <h3>Q: What formats are included?</h3>
-                <p>A: The product delivers as an immediate digital download — a PDF prompt pack plus a Notion template workspace so you can organize, customize, and reuse every template inside your own system.</p>
+                <p>A: Each product delivers as an immediate digital download — PDF prompt packs plus a Notion template workspace so you can organize, customize, and reuse every template inside your own system.</p>
             </div>
 
             <div class="faq-item">
@@ -396,8 +661,10 @@
         <div class="container">
             <h2>Your Voice Is Your Most Valuable Asset.</h2>
             <p>Most AI copy sounds like everyone else's AI copy. This system makes yours sound like you — with the depth, warmth, and precision your brand deserves.</p>
-            <p style="font-style: italic; font-size: 1.1rem; margin-bottom: 32px; color: #AFA49C;">One prompt pack. Infinite applications. Immediate download.</p>
-            <a href="https://learnerguide.gumroad.com/l/enfj-prompt-pack?_gl=1*l856ie*_ga*Mzg4NjE2MjI0LjE3NzkyODc2MzY.*_ga_6LJN6D94N6*czE3NzkzMTg0NjYkbzMkZzEkdDE3NzkzMTk3MzUkajUxJGwwJGgw" class="btn" style="box-shadow: 0 4px 14px rgba(0,0,0,0.4);">Get the ENFJ Voice System — $37 →</a>
+            <p style="font-style: italic; font-size: 1.1rem; margin-bottom: 32px; color: #AFA49C;">Three products. One system. Immediate download.</p>
+            <a href="https://learnerguide.gumroad.com/l/enfj-prompt-pack" class="btn" style="box-shadow: 0 4px 14px rgba(0,0,0,0.4); margin-bottom: 16px; display: inline-block;">Get the ENFJ Voice Pack — $37 →</a>
+            <br>
+            <a href="https://learnerguide.gumroad.com" class="btn btn-gold" style="display: inline-block;">Get the Full Suite — $57 →</a>
             
             <div class="creator-info">
                 Created by Monty B. — VisionMB Studio | Minneapolis, MN | 2026
@@ -408,7 +675,7 @@
     <footer>
         <div class="container">
             <div class="seo-seeds">
-                AI prompts for coaches · warm authority copywriting · ChatGPT prompts for therapists · ENFJ brand voice · human-sounding AI copy · AI copywriting templates · prompt engineering for healers · sales page prompts · email copywriting AI
+                AI prompts for coaches · warm authority copywriting · ChatGPT prompts for therapists · ENFJ brand voice · human-sounding AI copy · AI copywriting templates · prompt engineering for healers · sales page prompts · email copywriting AI · ENFJ prompt pack · ENFJ assistant · ENFJ companion guide
             </div>
         </div>
     </footer>
